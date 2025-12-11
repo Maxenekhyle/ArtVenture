@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign Up</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .bg {
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: -1;
+    }
+
+    .red { background: rgba(255, 100, 100, 0.45); top: 5%; left: 0%; }
+    .purple { background: rgba(210, 140, 255, 0.45); bottom: -10%; right: 8%; }
+
+    .wrapper {
+        width: 80%;
+        max-width: 1150px;
+        height: 500px;
+        border: 2px solid #333;
+        display: flex;
+        background: rgba(255,255,255,0.3);
+        backdrop-filter: blur(5px);
+    }
+
+    .left {
+        width: 50%;
+        border-right: 2px solid #333;
+    }
+
+    .left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .input-box {
+        width: 70%;
+        margin-bottom: 15px;
+    }
+
+    .input-box input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 2px solid #333;
+        outline: none;
+    }
+
+    .btn {
+        width: 70%;
+        padding: 14px;
+        border: 2px solid #333;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(90deg, #ff4f4f, #ff7eb3, #9b5cff);
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: 0.2s;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
+    }
+
+    .login-text {
+        margin-top: 12px;
+        font-size: 14px;
+        color: #c76c19;
+    }
+
+    .login-text a {
+        color: #333;
+        margin-left: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .login-text a:hover {
+        text-decoration: underline;
+    }
+
+    .title-top {
+        position: absolute;
+        top: 8px;
+        right: 60px;
+        font-size: 28px;
+        font-weight: bold;
+        color: #c76c19;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="bg red"></div>
+<div class="bg purple"></div>
+
+<h2 class="title-top">Sign up</h2>
+
+<div class="wrapper">
+
+    <div class="left">
+        <img src="bg.png" alt="signup image">
+    </div>
+
+    <div class="right">
+        <h2>Sign Up</h2>
+
+        <div class="input-box">
+            <input id="signupName" type="text" placeholder="Full Name">
+        </div>
+
+        <div class="input-box">
+            <input id="signupEmail" type="email" placeholder="Email">
+        </div>
+
+        <div class="input-box">
+            <input id="signupPass" type="password" placeholder="Password">
+        </div>
+
+        <a href="#" class="btn" id="signupBtn">Sign up</a>
+
+        <div class="login-text">
+            Already have an account?
+            <a href="Login.html">Login</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+ 
+  document.getElementById("signupBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("signupName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim();
+    const pass = document.getElementById("signupPass").value;
+
+    if (!name || !email || !pass) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("userPass", pass);
+
+    alert("Signup successful! Please login.");
+    window.location.href = "Login.html";
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact</title>
+
+<style>
+     body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+    }
+
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 40px;
+   background: #f2f2f2;
+ }
+ nav a {
+   margin: 0 10px;
+   text-decoration: none;
+   font-weight: bold;
+   color: #460394;
+ }
+     nav a:nth-child(3) { color: #c96704; }
+ .section-box {
+   width: 80%;
+   margin: 50px auto;
+   padding: 40px;
+   border: 2px #000;
+   background:  #f2f2f2;
+ }
+    .top-bg {
+        width: 1366px;
+        height: 293.3px;
+        background: url('topbg.png') center/cover no-repeat;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 50px 0;
+        background: radial-gradient(circle at 10% 40%, rgba(255, 219, 120, 0.45), transparent 60%),
+               radial-gradient(circle at 90% 30%, rgba(208, 150, 255, 0.45), transparent 60%),
+               #f2f2f2;
+    }
+    .panel {
+        width: 380px;
+        border: 2px solid #3a0000;
+        padding: 30px;
+        background: #f2f2f2;
+    }
+    h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        font-weight: 800;
+    }
+input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 22px;      
+    border: 2px solid #3a0000;
+    border-radius: 0;          
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    height: 45px;              
+    box-sizing: border-box;
+}
+select { height: 45px; }
+textarea { height: 120px; resize: none; }
+    .submit-btn {
+        width: 160px;
+        padding: 12px;
+        border: none;
+        background: #885d45;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        font-size: 18px;
+    }
+    .contact-item img {
+        width: 28px;
+    }
+    footer {
+   background: linear-gradient(90deg, #8c52ff, #ff914d);
+   padding: 40px 20px;
+   color: #000;
+   text-align: center;
+ }
+ .footer-columns {
+   display: flex;
+   justify-content: center;
+   gap: 100px;
+   text-align: left;
+ }
+ .footer-columns ul { list-style: none; padding: 0; }
+ .footer-columns a { text-decoration: none; color: #000; }
+ .socials img { width: 25px; margin: 0 10px; }
+ .back-top { margin-top: 20px; display: inline-block; }
+</style>
+</head>
+
+<body>
+
+<header>
+ <img src="logo.png" width="250" />
+ <nav>
+   <a href="Home.html">Home</a>
+   <a href="About.html">About</a>
+   <a href="Contact.html">Contact</a>
+   <a href="Tutorial.html">Tutorial</a>
+   <a href="Profile.html">👤 Profile</a>
+ </nav>
+</header>
+
+<div class="top-bg">
+    <img src="top-bg.png" alt="top bg">
+</div>
+
+<div class="container">
+    <div class="panel">
+        <h2>SEND US A FEEDBACK</h2>
+        <input id="feedbackName" type="text" placeholder="Your Full Name">
+        <select id="feedbackType">
+            <option>Sketch</option>
+            <option>Digital</option>
+            <option>Portrait</option>
+            <option>Paint</option>
+            <option>Realism</option>
+            <option>Crafts</option>
+        </select>
+        <textarea id="feedbackText" placeholder="Your feedback" rows="4"></textarea>
+        <button id="submitFeedback" class="submit-btn">Submit Feedback</button>
+    </div>
+
+    <div class="panel">
+        <h2>CONTACT US</h2>
+
+        <div class="contact-item">
+            <img src="contact-icon.png" alt="phone">
+            <span>09982352106</span>
+        </div>
+
+        <div class="contact-item">
+            <img src="mail-icon.png" alt="mail">
+            <span>khyle@gmail.com</span>
+        </div>
+
+        <div class="contact-item">
+            <img src="fb-icon.png" alt="fb">
+            <span>Maxene Khyle Velayo</span>
+        </div>
+
+        <div class="contact-item">
+            <img src="contact-icon.png" alt="phone">
+            <span>09215510486</span>
+        </div>
+
+        <div class="contact-item">
+            <img src="mail-icon.png" alt="mail">
+            <span>monica@gmail.com</span>
+        </div>
+
+        <div class="contact-item">
+            <img src="fb-icon.png" alt="fb">
+            <span>Monica Santos</span>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+ <div class="footer-columns">
+   <ul><strong>Crafts</strong>
+     <li><a href="polymer.mp4">Polymer clay</a></li>
+     <li><a href="paper rose.mp4">Paper rose</a></li>
+     <li><a href="cuteclay.mp4">Cute clay</a></li>
+     <li><a href="Crochet.mp4">Crochet</a></li>
+     <li><a href="clay animal.mp4">Clay Animal</a></li>
+   </ul>
+
+   <ul><strong>Digital</strong>
+     <li><a href="Tips in digital.mp4">Tips in digital</a></li>
+     <li><a href="how to draw juicy lips.mp4">to draw juicy lips</a></li>
+     <li><a href="studio paint.mp4">Studio Paint</a></li>
+     <li><a href="Digital Beginner.mp4">Digital Beginner</a></li>
+     <li><a href="digital.mp4">Digital</a></li>
+   </ul>
+
+   <ul><strong>Portrait</strong>
+     <li><a href="Drawface.mp4">Beginner</a></li>
+     <li><a href="drawhead.mp4">Draw head</a></li>
+     <li><a href="Loomismethod.mp4">Loomis method</a></li>
+     <li><a href="a gentle drawing.mp4">A Gentle Drawing</a></li>
+     <li><a href="beginnerfriendly.mp4">Beginner Friendly</a></li>
+   </ul>
+
+   <ul><strong>Paint</strong>
+     <li><a href="Acrylic Painting.mp4">Acrylic</a></li>
+     <li><a href="technique.mp4">Technique</a></li>
+     <li><a href="pinnksky.mp4">Sky</a></li>
+     <li><a href="flower.mp4">Flower</a></li>
+     <li><a href="beginner.mp4">Beginner</a></li>
+   </ul>
+ </div>
+
+ <a href="#" class="back-top">Back to top ↑</a>
+
+ <div class="socials">
+   <a href="https://www.facebook.com/share/1EuR2LufM5/" target="_blank">
+    <img src="facebook.png" alt="facebook" />
+</a>
+ <a href="https://www.instagram.com/khylaris/" target="_blank">
+    <img src="insta.png" alt="instagram" />
+</a>
+<a href="https://www.threads.com/@khylaris?xmt=AQF0Qp7_BxO9EMqUA928Nv8qkAClwTP0sHrr_OYr_wc0Q5Q" target="_blank">
+    <img src="thread.png" alt="thread" />
+</a>
+<a href="https://www.linkedin.com/in/monica-santos-7176a5379?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+    <img src="linkedin.png" alt="linkedin" />
+</a>
+<a href="https://www.youtube.com/@velayomaxenekhyle9363" target="_blank">
+    <img src="youtube.png" alt="youtube" />
+</a>
+ </div>
+
+ <div class="credits">
+   Monica Santos & Maxene Khyle Velayo<br>
+   © 2025, ArtVenture. All rights reserved.
+ </div>
+</footer>
+
+<script>
+
+  (function() {
+    const navUser = document.getElementById("navUser");
+    if (navUser) navUser.textContent = localStorage.getItem("userName") || "Guest";
+
+    document.getElementById("submitFeedback").addEventListener("click", function() {
+      const name = document.getElementById("feedbackName").value.trim();
+      const type = document.getElementById("feedbackType").value;
+      const text = document.getElementById("feedbackText").value.trim();
+      if (!name || !text) {
+        alert("Please enter name and feedback.");
+        return;
+      }
+      alert("Thanks for your feedback, " + name + "!");
+      document.getElementById("feedbackName").value = "";
+      document.getElementById("feedbackText").value = "";
+    });
+  })();
+</script>
+
+</body>
+</html>

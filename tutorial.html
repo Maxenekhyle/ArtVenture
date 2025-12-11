@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tutorials</title>
+<style>
+ body {
+ margin: 0;
+   font-family: Arial, sans-serif;
+   background: radial-gradient(circle at 10% 40%, rgba(194, 120, 255, 0.45), transparent 60%),
+               radial-gradient(circle at 90% 30%, rgba(255, 150, 150, 0.45), transparent 60%),
+               #f2f2f2;
+   backdrop-filter: blur(40px);
+   -webkit-backdrop-filter: blur(40px);
+ }
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 40px;
+   background: #f2f2f2;
+ }
+ nav a {
+   margin: 0 10px;
+   text-decoration: none;
+   font-weight: bold;
+   color: #460394;
+ }
+   nav a:nth-child(4) { color: #c96704; }
+
+ .tutorial-title {
+   font-size: 28px;
+   font-weight: 700;
+   color: #3a0ca3;
+   margin: 40px;
+ }
+
+
+ .grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 50px;
+   width: 80%;
+   margin: 50px auto;
+ }
+
+ .video-box {
+   border: 3px solid;
+   border-image-slice: 1;
+   border-width: 3px;
+   border-image-source: linear-gradient(45deg, #ff6b6b, #7b2cbf);
+   height: 180px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   border-radius: 5px;
+   position: relative;
+   overflow: hidden;
+ }
+
+ .video-box i {
+   font-size: 40px;
+ }
+
+ footer {
+   background: linear-gradient(90deg, #8c52ff, #ff914d);
+   padding: 40px 20px;
+   color: #000;
+   text-align: center;
+ }
+ .footer-columns {
+   display: flex;
+   justify-content: center;
+   gap: 100px;
+   text-align: left;
+ }
+ .footer-columns ul { list-style: none; padding: 0; }
+ .footer-columns a { text-decoration: none; color: #000; }
+ .socials img { width: 25px; margin: 0 10px; }
+ .back-top { margin-top: 20px; display: inline-block; }
+</style>
+</head>
+<body>
+
+<header>
+ <img src="logo.png" width="250" />
+ <nav>
+   <a href="Home.html">Home</a>
+   <a href="About.html">About</a>
+   <a href="Contact.html">Contact</a>
+   <a href="Tutorial.html">Tutorial</a>
+   <a href="Profile.html">👤 Profile</a>
+ </nav>
+</header>
+<script>
+
+let tutorialVideos = [
+    "Acrylic Painting.mp4",
+    "beginner.mp4",
+    "flower.mp4",
+    "pinnksky.mp4",
+    "technique.mp4",
+    "Watercolor.mp4",
+
+    "Drawface.mp4",
+    "drawhead.mp4",
+    "Loomismethod.mp4",
+    "beginnerfriendly.mp4",
+    "portrait.mp4",
+    "a gentle drawing.mp4",
+
+    "Digital Beginner.mp4",
+    "digital.mp4",
+    "how to draw juicy lips.mp4",
+    "Realismdigital.mp4",
+    "studio paint.mp4",
+    "Tips in digital.mp4",
+
+    "polymer.mp4",
+    "paper rose.mp4",
+    "clay animal.mp4",
+    "cuteclay.mp4",
+    "Crochet.mp4",
+    "crochetboquet.mp4",
+
+    "Brutfuner.mp4",
+    "color pencil.mp4",
+    "color theory.mp4",
+    "howtoblend.mp4",
+    "realismcolor.mp4",
+    "tips colored.mp4",
+];
+
+
+function playInsideBox(box, index) {
+    box.innerHTML = `
+        <video width="100%" height="100%" controls autoplay style="border-radius:5px;">
+            <source src="${tutorialVideos[index]}" type="video/mp4">
+        </video>
+    `;
+}
+
+
+function getQuery(name) {
+    return new URLSearchParams(window.location.search).get(name);
+}
+
+window.onload = function() {
+    if (getQuery("play") === "1") {
+        let firstBox = document.querySelector(".video-box");
+        playInsideBox(firstBox, 0);
+    }
+};
+</script>
+
+<div class="tutorial-title">TUTORIALS</div>
+
+<div class="tutorial-title">Paint</div>
+<div class="grid">
+ <div class="video-box" onclick="playInsideBox(this, 0)"
+      style="background:url('acrylic.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 1)"
+      style="background:url('beginner.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 2)"
+      style="background:url('flower.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 3)"
+      style="background:url('pinksky.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 4)"
+      style="background:url('technique.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 5)"
+      style="background:url('watercolor.jpg'); background-size:cover; background-position:center;"></div>
+</div>
+
+<div class="tutorial-title">Portrait</div>
+<div class="grid">
+ <div class="video-box" onclick="playInsideBox(this, 6)"
+      style="background:url('drawface.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 7)"
+      style="background:url('drawhead.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 8)"
+      style="background:url('loomis.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 9)"
+      style="background:url('beginnerfriendly.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 10)"
+      style="background:url('portrait.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 11)"
+      style="background:url('a\ gentle\ drawing.jpg'); background-size:cover; background-position:center;"></div>
+</div>
+<div class="tutorial-title">Digital</div>
+<div class="grid">
+ <div class="video-box" onclick="playInsideBox(this, 12)"
+      style="background:url('digitalbeginner.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 13)"
+      style="background:url('digital.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 14)"
+      style="background:url('howtodrawjuicylips.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 15)"
+      style="background:url('realismdiigital.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 16)"
+      style="background:url('studiopaint.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 17)"
+      style="background:url('tipsindigital.jpg'); background-size:cover; background-position:center;"></div>
+</div>
+<div class="tutorial-title">Crafting</div>
+<div class="grid">
+ <div class="video-box" onclick="playInsideBox(this, 18)"
+      style="background:url('polymer.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 19)"
+      style="background:url('papperrose.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 20)"
+      style="background:url('clayanimal.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 21)"
+      style="background:url('cuteclay.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 22)"
+      style="background:url('crochet.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 23)"
+      style="background:url('crochetboquet.jpg'); background-size:cover; background-position:center;"></div>
+</div>
+<div class="tutorial-title">Colored</div>
+<div class="grid">
+ <div class="video-box" onclick="playInsideBox(this, 24)"
+      style="background:url('brutfuner.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 25)"
+      style="background:url('colorpencil.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 26)"
+      style="background:url('colortheory.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 27)"
+      style="background:url('howtoblend.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 28)"
+      style="background:url('realismcolor.jpg'); background-size:cover; background-position:center;"></div>
+ <div class="video-box" onclick="playInsideBox(this, 29)"
+      style="background:url('tipscolored.jpg'); background-size:cover; background-position:center;"></div>
+</div>
+
+<footer>
+ <div class="footer-columns">
+   <ul><strong>Crafts</strong>
+     <li><a href="polymer.mp4">Polymer clay</a></li>
+     <li><a href="paper rose.mp4">Paper rose</a></li>
+     <li><a href="cuteclay.mp4">Cute clay</a></li>
+     <li><a href="Crochet.mp4">Crochet</a></li>
+     <li><a href="clay animal.mp4">Clay Animal</a></li>
+   </ul>
+
+   <ul><strong>Digital</strong>
+     <li><a href="Tips in digital.mp4">Tips in digital</a></li>
+     <li><a href="how to draw juicy lips.mp4">to draw juicy lips</a></li>
+     <li><a href="studio paint.mp4">Studio Paint</a></li>
+     <li><a href="Digital Beginner.mp4">Digital Beginner</a></li>
+     <li><a href="digital.mp4">Digital</a></li>
+   </ul>
+
+   <ul><strong>Portrait</strong>
+     <li><a href="Drawface.mp4">Beginner</a></li>
+     <li><a href="drawhead.mp4">Draw head</a></li>
+     <li><a href="Loomismethod.mp4">Loomis method</a></li>
+     <li><a href="a gentle drawing.mp4">A Gentle Drawing</a></li>
+     <li><a href="beginnerfriendly.mp4">Beginner Friendly</a></li>
+   </ul>
+
+   <ul><strong>Paint</strong>
+     <li><a href="Acrylic Painting.mp4">Acrylic</a></li>
+     <li><a href="technique.mp4">Technique</a></li>
+     <li><a href="pinnksky.mp4">Sky</a></li>
+     <li><a href="flower.mp4">Flower</a></li>
+     <li><a href="beginner.mp4">Beginner</a></li>
+   </ul>
+ </div>
+
+ <a href="#" class="back-top">Back to top ↑</a>
+
+ <div class="socials">
+   <a href="https://www.facebook.com/share/1EuR2LufM5/" target="_blank">
+        <img src="facebook.png" alt="facebook" />
+   </a>
+   <a href="https://www.instagram.com/khylaris/" target="_blank">
+        <img src="insta.png" alt="instagram" />
+   </a>
+   <a href="https://www.threads.com/@khylaris" target="_blank">
+        <img src="thread.png" alt="thread" />
+   </a>
+   <a href="https://www.linkedin.com/in/monica-santos" target="_blank">
+        <img src="linkedin.png" alt="linkedin" />
+   </a>
+   <a href="https://www.youtube.com/@velayomaxenekhyle9363" target="_blank">
+        <img src="youtube.png" alt="youtube" />
+   </a>
+ </div>
+
+ <div class="credits">
+   Monica Santos & Maxene Khyle Velayo<br>
+   © 2025, ArtVenture. All rights reserved.
+ </div>
+</footer>
+
+<script>
+  (function() {
+    const privatePages = ["Home.html","Profile.html","Tutorial.html"];
+    const file = location.pathname.split("/").pop();
+    const loggedIn = localStorage.getItem("loggedIn");
+    if (privatePages.includes(file) && !loggedIn) {
+      window.location.href = "Login.html";
+      return;
+    }
+    const navUser = document.getElementById("navUser");
+    if (navUser) navUser.textContent = localStorage.getItem("userName") || "Guest";
+  })();
+</script>
+
+</body>
+</html>

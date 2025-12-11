@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Get Started</title>
+<script>
+if (!localStorage.getItem("loggedIn")) {
+    const privatePages = ["Home.html", "Profile.html", "Tutorial.html"];
+    const file = location.pathname.split("/").pop();
+
+    if (privatePages.includes(file)) {
+        window.location.href = "Login.html";
+    }
+}
+
+const navUser = document.getElementById("navUser");
+if (navUser) {
+    navUser.textContent = localStorage.getItem("userName") || "Guest";
+}
+</script>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    .bg-circle {
+        position: absolute;
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: -1;
+    }
+
+    .red { background: rgba(255, 100, 100, 0.45); top: 10%; left: 5%; }
+    .blue { background: rgba(120, 120, 255, 0.45); top: 0%; right: 10%; }
+    .purple { background: rgba(190, 120, 255, 0.40); bottom: -10%; right: 20%; }
+    .orange { background: rgba(255, 200, 120, 0.40); bottom: -5%; left: 20%; }
+
+    .top-image {
+        width: 450px;
+        height: auto;
+        border-radius: 12px;
+        display: block;
+    }
+
+    .btn {
+        margin-top: 40px;
+        padding: 18px 60px;
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 35px;
+        cursor: pointer;
+        background: linear-gradient(90deg, #ff4f4f, #ff6ec7, #7b57ff);
+        transition: 0.2s;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn:hover {
+        opacity: 0.85;
+        transform: scale(1.03);
+    }
+
+</style>
+</head>
+<body>
+
+<div class="bg-circle red"></div>
+<div class="bg-circle blue"></div>
+<div class="bg-circle purple"></div>
+<div class="bg-circle orange"></div>
+
+<img src="logo.png" class="top-image">
+
+<a href="Signup.html" class="btn">Get started</a>
+
+</body>
+</html>

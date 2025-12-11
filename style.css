@@ -1,0 +1,173 @@
+/* Base Reset and Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5; /* Light grey base for the background */
+    overflow: hidden; /* Prevent scrollbars from the large background elements */
+    position: relative;
+}
+
+/* Background Gradients (Approximating the blurred color spheres) */
+.container::before,
+.container::after,
+.container > .scenic-banner::before,
+.container > .scenic-banner::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px); /* Heavy blur for the soft glow effect */
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: -1; /* Keep them in the background */
+}
+
+/* Top-Left Red/Orange Sphere */
+.container::before {
+    width: 300px;
+    height: 300px;
+    top: 5%;
+    left: 5%;
+    background: radial-gradient(circle, rgba(255, 99, 71, 1) 0%, rgba(255, 160, 122, 0) 70%);
+}
+
+/* Top-Right Blue/Purple Sphere */
+.container::after {
+    width: 350px;
+    height: 350px;
+    top: 5%;
+    right: 5%;
+    background: radial-gradient(circle, rgba(65, 105, 225, 1) 0%, rgba(135, 206, 250, 0) 70%);
+}
+
+/* Center Container for Alignment */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the banner and button horizontally */
+    gap: 40px; /* Space between the banner and the button */
+    padding: 20px;
+    position: relative; /* Needed for z-index and inner positioning */
+}
+
+/* Scenic Banner Styling */
+.scenic-banner {
+    width: 600px; /* Fixed width for the banner */
+    height: 150px; /* Fixed height for the banner */
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sky-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; /* Sky takes up the top portion */
+    background: linear-gradient(to bottom, #add8e6, #fff); /* Light blue to white gradient for the sky */
+}
+
+/* Clouds */
+.cloud {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.cloud-1 {
+    width: 80px;
+    height: 30px;
+    top: 20px;
+    left: 200px;
+}
+
+.cloud-2 {
+    width: 50px;
+    height: 20px;
+    top: 30px;
+    right: 50px;
+}
+
+/* Hills */
+.hills-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent; /* Overlay hills on the sky */
+    z-index: 1; /* Ensure hills are above the sky */
+}
+
+/* Using pseudo-elements to draw the layered hills */
+.hills-background::before,
+.hills-background::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Height for the deepest hill layer */
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0; /* Creates the rolling hill shape */
+}
+
+/* Backmost Hill (Darkest Green) */
+.hills-background::before {
+    background-color: #55a840; /* Darker green */
+    height: 70px;
+    transform: translateY(10px) scaleX(1.05); /* Slightly offset and wider */
+}
+
+/* Frontmost Hill (Lighter Green) - The most prominent one */
+.hills-background::after {
+    background-color: #8bc34a; /* Lighter, more vibrant green */
+    height: 80px;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+/* Small figures (for detail) */
+.small-figures {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    width: 5px;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    z-index: 3;
+}
+
+
+/* Get Started Button Styling */
+.get-started-button {
+    padding: 15px 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Gradient matching the image: red/pink to purple */
+    background: linear-gradient(90deg, #ff6b6b 0%, #a259ff 100%);
+    transition: all 0.3s ease;
+}
+
+/* Button Hover/Active effects for clickability feedback */
+.get-started-button:hover {
+    box-shadow: 0 8px 20px rgba(162, 89, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.get-started-button:active {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}

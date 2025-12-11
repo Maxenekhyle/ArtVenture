@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<style>
+ body {
+ margin: 0;
+   font-family: Arial, sans-serif;
+   background: radial-gradient(circle at 10% 40%, rgba(255,120,120,0.45), transparent 60%),
+               radial-gradient(circle at 90% 30%, rgba(150,150,255,0.45), transparent 60%),
+               #f2f2f2;
+   backdrop-filter: blur(40px);
+   -webkit-backdrop-filter: blur(40px);
+ }
+ header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 40px;
+   background: #f2f2f2;
+ }
+ nav a {
+   margin: 0 10px;
+   text-decoration: none;
+   font-weight: bold;
+   color: #460394;
+ }
+ nav a:first-child { color: #c96704; }
+ .hero {
+   width: 100%;
+ }
+ .gallery {
+   display: flex;
+   justify-content: center;
+   gap: 40px;
+   padding: 40px 0;
+ }
+ .gallery img {
+   width: 260px;
+   height: 260px;
+   object-fit: cover;
+   border: 2px #000;
+ }
+ footer {
+   background: linear-gradient(90deg, #8c52ff, #ff914d);
+   padding: 40px 20px;
+   color: #000;
+   text-align: center;
+ }
+ .footer-columns {
+   display: flex;
+   justify-content: center;
+   gap: 100px;
+   text-align: left;
+ }
+ .footer-columns ul { list-style: none; padding: 0; }
+ .footer-columns a { text-decoration: none; color: #000; }
+ .socials img { width: 25px; margin: 0 10px; }
+ .back-top { margin-top: 20px; display: inline-block; }
+</style>
+</head>
+<body>
+
+<header>
+ <img src="logo.png" alt="header" width="250" />
+ <nav>
+   <a href="Home.html">Home</a>
+   <a href="About.html">About</a>
+   <a href="Contact.html">Contact</a>
+   <a href="Tutorial.html">Tutorial</a>
+   <a href="Profile.html">👤 Profile</a>
+ </nav>
+</header>
+
+
+<img src="header.png" class="hero" alt="header image" />
+
+<div class="gallery">
+ <a href="#"><img src="lola.png" alt="lola" /></a>
+ <a href="#"><img src="jackiechan.png" alt="mika" /></a>
+ <a href="#"><img src="myself.png" alt="myself" /></a>
+</div>
+
+<footer>
+ <div class="footer-columns">
+   <ul><strong>Crafts</strong>
+     <li><a href="polymer.mp4">Polymer clay</a></li>
+     <li><a href="paper rose.mp4">Paper rose</a></li>
+     <li><a href="cuteclay.mp4">Cute clay</a></li>
+     <li><a href="Crochet.mp4">Crochet</a></li>
+     <li><a href="clay animal.mp4">Clay Animal</a></li>
+   </ul>
+
+   <ul><strong>Digital</strong>
+     <li><a href="Tips in digital.mp4">Tips in digital</a></li>
+     <li><a href="how to draw juicy lips.mp4">to draw juicy lips</a></li>
+     <li><a href="studio paint.mp4">Studio Paint</a></li>
+     <li><a href="Digital Beginner.mp4">Digital Beginner</a></li>
+     <li><a href="digital.mp4">Digital</a></li>
+   </ul>
+
+   <ul><strong>Portrait</strong>
+     <li><a href="Drawface.mp4">Beginner</a></li>
+     <li><a href="drawhead.mp4">Draw head</a></li>
+     <li><a href="Loomismethod.mp4">Loomis method</a></li>
+     <li><a href="a gentle drawing.mp4">A Gentle Drawing</a></li>
+     <li><a href="beginnerfriendly.mp4">Beginner Friendly</a></li>
+   </ul>
+
+   <ul><strong>Paint</strong>
+     <li><a href="Acrylic Painting.mp4">Acrylic</a></li>
+     <li><a href="technique.mp4">Technique</a></li>
+     <li><a href="pinnksky.mp4">Sky</a></li>
+     <li><a href="flower.mp4">Flower</a></li>
+     <li><a href="beginner.mp4">Beginner</a></li>
+   </ul>
+ </div>
+
+ <a href="#" class="back-top">Back to top ↑</a>
+
+ <div class="socials">
+   <a href="https://www.facebook.com/share/1EuR2LufM5/" target="_blank">
+    <img src="facebook.png" alt="facebook" />
+</a>
+ <a href="https://www.instagram.com/khylaris/" target="_blank">
+    <img src="insta.png" alt="instagram" />
+</a>
+<a href="https://www.threads.com/@khylaris?xmt=AQF0Qp7_BxO9EMqUA928Nv8qkAClwTP0sHrr_OYr_wc0Q5Q" target="_blank">
+    <img src="thread.png" alt="thread" />
+</a>
+<a href="https://www.linkedin.com/in/monica-santos-7176a5379?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+    <img src="linkedin.png" alt="linkedin" />
+</a>
+<a href="https://www.youtube.com/@velayomaxenekhyle9363" target="_blank">
+    <img src="youtube.png" alt="youtube" />
+</a>
+ </div>
+
+ <div class="credits">
+   Monica Santos & Maxene Khyle Velayo<br>
+   © 2025, ArtVenture. All rights reserved.
+ </div>
+</footer>
+
+<script>
+
+  (function() {
+    const privatePages = ["Home.html","Profile.html","Tutorial.html"];
+    const file = location.pathname.split("/").pop();
+    const loggedIn = localStorage.getItem("loggedIn");
+
+    if (privatePages.includes(file) && !loggedIn) {
+      window.location.href = "Login.html";
+      return;
+    }
+
+    const navUser = document.getElementById("navUser");
+    if (navUser) {
+      navUser.textContent = localStorage.getItem("userName") || "Guest";
+    }
+  })();
+</script>
+
+</body>
+</html>
